@@ -1,7 +1,7 @@
 require('./lib/string.js');
 
-//var _ = require('underscore'),
-  var fs = require('fs');
+var _ = require('underscore'),
+ fs = require('fs');
 
 var objects = require('./example.json').objects,
   models = [];
