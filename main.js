@@ -1,7 +1,7 @@
 require('./lib/string.js');
 
-var _ = require('underscore'),
-  fs = require('fs');
+//var _ = require('underscore'),
+  var fs = require('fs');
 
 var objects = require('./example.json').objects,
   models = [];
@@ -24,7 +24,7 @@ for (var key in objects) {
 
   for (var attr in model.attributes) {
     var attribute = model.attributes[attr];
-    var field = form.attributes[attr];
+    var field = form.fields[attr];
 
     delete field.required;
     delete field.type;
@@ -37,9 +37,9 @@ for (var key in objects) {
   console.log(model);
   /*models.push(model);
   forms.push(form);*/
-  var template_string = fs.readFileSync('./templates/model.tpl').toString();
+  /*var template_string = fs.readFileSync('./templates/model.tpl').toString();
   var template = _.template(template_string);
-  console.log(template(model));
+  console.log(template(model));*/
 
 };
 
