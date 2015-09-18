@@ -1,15 +1,11 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var <% model_name %> = new Schema({
+var <%= model_name %> = new Schema({
   <% _.each(attributes, function (value, key) { %>
-    <% key %>:  {
-      <% var last = _.last(value), lastKey = _.keys(last)[0];  %>
-      <% _.each(value, function (v, k) { %>
-        <% k %>: <% v %> <% if (k != lastKey) { %> , <% } %>
-      <% }); %>
+    <%= key %>: { <% var last = _.last(value), lastKey = _.keys(last)[0]; %><% _.each(value, function (v, k) { %>
+      <%= k %>: <%= v %><% if (k != lastKey) { %>,<% } %><% }); %>
     },
-    
   <% }); %>
   created_at: {
     type: Date,
@@ -20,19 +16,19 @@ var <% model_name %> = new Schema({
     type: Date
   }
 }. {
-  collectionName: '<% collection_name %>' 
-});q
+  collectionName: '<%= collection_name %>' 
+});
 
-<% model_name %>.methods.update = function(data, next) {
+<%= model_name %>.methods.update = function(data, next) {
   this.set(data);
   this.save(next);
 }
 
-<% model_name %>.pre('save', function(next) {
+<%= model_name %>.pre('save', function(next) {
   var me = this;
   me.updated_at = Date.now();
   next();
 });
 
 
-module.exports = mongoose.model('<% model_name %>', <% model_name %>);
+module.exports = mongoose.model('<%= model_name %>', <% model_name %>);
