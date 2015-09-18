@@ -1,0 +1,47 @@
+{
+  "objects": {
+    "User": {
+      "first_name": {
+        "type": "string",
+        "required": true,
+        "label": "Nombre",
+        "widget": {
+          "tag": "input",
+          "minlength": 30,
+          "maxlength": 20,
+          "required": "required",
+          "type": "text"
+        }
+      },
+      "last_name": {
+        "type": "string",
+        "required": true,
+        "label": "Apellido",
+        "widget": {
+          "tag": "input",
+          "minlength": 30,
+          "maxlength": 20,
+          "required": "required",
+          "type": "text"
+        }
+      }
+    },
+    "Category": {
+      "name": {
+        "type": "string",
+        "required": true,
+        "widget": {
+          "tag": "input",
+          "type": "text"
+        }
+      },
+      "description": {
+        "type": "string",
+        "required": true,
+        "widget": {
+          "tag": "textarea"
+        }
+      }
+    }
+  }
+}
