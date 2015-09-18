@@ -35,6 +35,7 @@ for (var key in objects) {
   }
 
   console.log(model);
+  console.log(form);
   /*models.push(model);
   forms.push(form);*/
   var template_string = fs.readFileSync('./templates/model.tpl').toString();
