@@ -31,11 +31,10 @@ for (var key in objects) {
     delete field.ref;
 
     delete attribute.widget;
-    delete attribute.label;
-  }
 
-  console.log(model);
-  console.log(form);
+    model.attributes[attr] = attribute;
+    form.fields[attr] = field;
+  }
   /*models.push(model);
   forms.push(form);*/
   var template_string = fs.readFileSync('./templates/model.tpl').toString();
@@ -43,4 +42,3 @@ for (var key in objects) {
   console.log(template(model));
 
 };
-
