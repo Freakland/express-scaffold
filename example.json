@@ -2,10 +2,11 @@
   "objects": {
     "User": {
       "first_name": {
-        "type": "string",
+        "type": "String",
         "required": true,
-        "label": "Nombre",
+        "ref": "Category",
         "widget": {
+          "label": "Nombre",
           "tag": "input",
           "minlength": 30,
           "maxlength": 20,
@@ -16,8 +17,8 @@
       "last_name": {
         "type": "string",
         "required": true,
-        "label": "Apellido",
         "widget": {
+          "label": "Apellido",
           "tag": "input",
           "minlength": 30,
           "maxlength": 20,
