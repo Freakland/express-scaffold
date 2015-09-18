@@ -37,9 +37,9 @@ for (var key in objects) {
   console.log(model);
   /*models.push(model);
   forms.push(form);*/
-  /*var template_string = fs.readFileSync('./templates/model.tpl').toString();
+  var template_string = fs.readFileSync('./templates/model.tpl').toString();
   var template = _.template(template_string);
-  console.log(template(model));*/
+  console.log(template(model));
 
 };
 
