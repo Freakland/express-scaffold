@@ -23,8 +23,8 @@ for (var key in objects) {
   var routes = [];
 
   for (var attr in model.attributes) {
-    var attribute = model.attributes[attr];
-    var field = form.fields[attr];
+    var attribute = _.extend({}, model.attributes[attr]);
+    var field = _.extend({}, form.fields[attr]);
 
     delete field.required;
     delete field.type;
